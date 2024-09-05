@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "groq_transcribe"
+version = "0.1.0"
+authors = [{ name = "Avery", email = "avery@bluebirdback.com" }]
+description = "A tool for transcribing audio files using Groq's Speech to Text API and saving results in VTT and SRT formats"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["groq", "python-dotenv"]
+
+[project.urls]
+"Homepage" = "https://github.com/bluebirdback/groq_transcribe"
+"Bug Tracker" = "https://github.com/bluebirdback/groq_transcribe/issues"
+
+[project.scripts]
+groq_transcribe = "groq_transcribe.transcribe:main"
