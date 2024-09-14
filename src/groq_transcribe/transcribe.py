@@ -3,11 +3,17 @@
 For more information, see: https://console.groq.com/docs/speech-text
 """
 
-import argparse
-import os
 import sys
-from groq import Groq, GroqError
-from dotenv import load_dotenv, find_dotenv
+
+try:
+    import argparse
+    import os
+    from groq import Groq, GroqError
+    from dotenv import load_dotenv, find_dotenv
+except ImportError as e:
+    print(f"ImportError: {e}. Please install the required packages.")
+    sys.exit(1)
+
 
 load_dotenv(find_dotenv(), override=True)
 api_key = os.getenv("GROQ_API_KEY")
